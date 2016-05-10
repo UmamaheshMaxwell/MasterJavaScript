@@ -1,0 +1,46 @@
+<html>
+	<head>		
+	</head>
+	<body>
+		<script type="text/javascript">
+
+		function getSum(num1, num2) {
+			return num1 + num2;
+		}
+
+		document.write("Num of aruguments " + getSum.length +
+		"<br />");
+
+		function Mammal(name){
+			this.name = name;
+			this.getInfo = function(){
+				return "The mammals name is " + this.name;
+			}
+		}
+
+		Mammal.prototype.sound = "Grrr";
+
+		Mammal.prototype.makeSound = function(){
+			return this.name + " says " + this.sound;
+		}
+
+		var grover = new Mammal("Grover");
+
+		document.write(grover.makeSound() + "<br />");
+
+		for (var prop in grover){
+			document.write(prop + " : " + grover[prop] + "<br />");
+		}
+
+
+
+
+
+
+
+
+
+
+		</script>
+	</body>
+</html>

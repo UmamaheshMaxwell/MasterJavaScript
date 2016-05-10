@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title>Object Oriented javaScipt</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var customer = {
+			name: "Tom Smith",
+			speak: function(){
+				return "My name is " + this.name;
+			},
+			address:{
+				street: '123 main St',
+				city: "Pittsburgh",
+				state: "PA"
+			}
+		};
+
+		document.write(customer.speak() + "<br />");
+
+		document.write(customer.name + " lives at " + customer.address.street + "<br />");
+
+		customer.address.country ="US";
+
+		document.write(customer.address.country + "<br />");
+
+		function Person(name, street) {
+			this.name = name;
+			this.street = street;
+
+			this.info = function(){
+				return "My name is " + this.name + " and i live on " + this.street;
+			}
+		}
+
+
+		var personData = new Person("Bob Smith", "234 main st");
+
+		document.write(personData.info()+ "<br />");
+
+		document.write("Bob is a person " + (personData instanceof Person) + "<br />");
+
+		function changeName(person){
+			person.name ="Sue Smith";
+		}
+
+		changeName(personData);
+
+		document.write("Bob became " + personData.name + "<br />");
+
+		var person1 = new Person("Paul", "123 Main");
+		var person2 = new Person("Paul", "123 Main");
+
+		document.write("Are they equal " + (person1 == person2) + "<br />");
+	
+	</script>
+</body>
+</html>
